@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Meta Data -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Links -->
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" type="text/css" href="/style.css">
+  <!-- Scripts -->
+  <script src="/script.js" defer></script>
+  <!-- Title -->
+  <title>Frontend Mentor | Tip calculator app</title>
+</head>
+<body>
+  <header>
+    <img src="/images/logo.svg" alt="splitter logo" />
+  </header>
+  <main>
+    <section class="calculator-section">
+      <div class="labels">
+        <h1 class="label">Bill</h1>
+        <h1 id="bill-error" class="hidden">Can't be zero</h1>
+      </div>
+      <input id="bill" class="bill-input" type="number" placeholder="0" oninput="calculator()" onkeydown="return event.keyCode !== 69" required>
+
+      <h1>Select Tip %</h1>
+      <div class="tip-button-container">
+        <div class="tip-button" data-value="5">
+          <p>5%</p>
+        </div>
+        <div class="tip-button" data-value="10">
+          <p>10%</p>
+        </div>
+        <div class="tip-button" data-value="15">
+          <p>15%</p>
+        </div>
+        <div class="tip-button" data-value="25">
+          <p>25%</p>
+        </div>
+        <div class="tip-button" data-value="50">
+          <p>50%</p>
+        </div>
+        <input id="tip-custom" class="tip-custom" type="number" placeholder="Custom" oninput="customTipInput()" onkeydown="return event.keyCode !== 69">
+      </div>
+    
+      <div class="labels">
+        <h1 class="label">Number of People</h1>
+        <h1 id="people-error" class="people-label-error hidden">Can't be zero</h1>
+      </div>
+      <input id="people" class="people-input" type="number" placeholder="0" oninput="calculator()" onkeydown="return event.keyCode !== 69">
+    </section>
+
+    <section class="results-section">
+      <div class="tip-wrapper">
+        <div class="results-text">
+          <p>Tip Amount</p>
+          <span>/ person</span>
+        </div>
+        <p class="tip-total">
+          $<span id="tip-per-person">0.00</span><!-- Tip Per Person Here -->
+        </p>
+      </div>
+      <div class="total-wrapper">
+        <div class="results-text">
+          <p>Total</p>
+          <span>/ person</span>
+        </div>
+        <p class="tip-total">
+          $<span id="total-per-person">0.00</span><!-- Total Per Person Here -->
+        </p>
+      </div>
+    
+      <button class="reset-button" onclick="reset()">Reset</button>
+    </section>
+  
+  </main>
+  <footer>
+    <div class="attribution">
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+      Coded by <a href="#">Herold Levente Kiraly</a>.
+    </div>
+  </footer>
+</body>
+</html>

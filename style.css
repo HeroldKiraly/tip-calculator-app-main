@@ -1,0 +1,284 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@700&display=swap');
+
+:root {
+    /* Primary Colors */
+    --Strong-Cyan: hsl(172, 67%, 45%);
+    /* Neutral Colors */
+    --Very-Dark-Cyan: hsl(183, 100%, 15%);
+    --Dark-Grayish-Cyan: hsl(186, 14%, 43%);
+    --Grayish-Cyan: hsl(184, 14%, 56%);
+    --Light-Grayish-Cyan: hsl(185, 41%, 84%);
+    --Very-Light-Grayish-Cyan: hsl(189, 41%, 97%);
+    --White: hsl(0, 0%, 100%);
+    --Error-Red: hsl(0, 45%, 61%);
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    font-family: 'Space Mono', monospace;
+    background-color: var(--Light-Grayish-Cyan);
+}
+
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 8rem;
+}
+
+main {
+    background-color: var(--White);
+    min-width: 375px;
+    height: fit-content;
+    padding: 2rem 1.8rem 2rem 1.8rem;
+    border-radius: 2rem 2rem 0rem 0rem;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  display: none;
+}
+
+.calculator-section > h1 {
+    margin: 0rem;
+    font-size: 1rem;
+    color: var(--Dark-Grayish-Cyan);
+}
+
+.results-section {
+    background-color: var(--Very-Dark-Cyan);
+    border-radius: 1rem;
+    padding: 1.5rem;
+}
+
+.labels {
+    display: flex;
+    justify-content: space-between;
+}
+
+.labels > h1 {
+    margin: 0rem;
+    font-size: 1rem;
+    color: var(--Dark-Grayish-Cyan);
+}
+
+.labels > #people-error, #bill-error {
+    color: var(--Error-Red);
+}
+
+.bill-input {
+    border: 0;
+    border-radius: 0.3rem;
+    font-size: 1.5rem;
+    background: url(/images/icon-dollar.svg) no-repeat scroll 1rem 50%;
+    background-color: var(--Very-Light-Grayish-Cyan);
+    padding: 1rem;
+    text-align: right;
+    font-family: 'Space Mono', monospace;
+    color: var(--Very-Dark-Cyan);
+    height: 45px;
+    width: 100%;
+    margin: 0.5rem 0rem 1.5rem 0rem;
+}
+
+.bill-input:focus {
+    outline: 2px solid var(--Strong-Cyan);
+}
+
+.tip-custom {
+    font-size: 1.5rem;
+    border: 0;
+    background-color: var(--Very-Light-Grayish-Cyan);
+    font-family: 'Space Mono', monospace;
+    color: var(--Very-Dark-Cyan);
+    text-align: right;
+    padding-right: 1rem;
+}
+
+.tip-custom:focus {
+    outline: 2px solid var(--Strong-Cyan);
+}
+
+.people-input {
+    border: 0;
+    border-radius: 0.3rem;
+    font-size: 1.5rem;
+    background: url(/images/icon-person.svg) no-repeat scroll 1rem 50%;
+    background-color: var(--Very-Light-Grayish-Cyan);
+    text-align: right;
+    padding: 1rem;
+    font-family: 'Space Mono', monospace;
+    color: var(--Very-Dark-Cyan);
+    height: 45px;
+    width: 100%;
+    margin: 0.5rem 0rem 1.5rem 0rem;
+}
+
+.people-input:focus {
+    outline: 2px solid var(--Strong-Cyan);
+}
+
+.tip-button-container {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-bottom: 2rem;
+    width: 100%;
+}
+
+.tip-button, .tip-custom {
+    margin-top: 0.8rem;
+    height: 50px;
+    width: 150px;
+    border-radius: 0.3rem;
+}
+
+.tip-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--Very-Dark-Cyan);
+}
+
+.tip-button > p {
+    font-size: 1.5rem;
+    color: var(--White);
+}
+
+.tip-button:hover {
+    background-color: var(--Light-Grayish-Cyan);
+    cursor: pointer;
+}
+
+.tip-button:hover > p {
+    color: var(--Very-Dark-Cyan);
+}
+
+.selected-button {
+    background-color: var(--Strong-Cyan);
+}
+
+.selected-button > p {
+    color: var(--Very-Dark-Cyan);
+}
+
+.tip-wrapper, .total-wrapper {
+    display: flex;
+    justify-content: center;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.tip-total {
+    font-size: 2rem;
+    margin: 0.5rem 0rem 0.5rem 0rem;
+    color: var(--Strong-Cyan);
+}
+
+.results-text {
+    font-size: 0.9rem;
+    color: var(--White);
+}
+
+.results-text > span {
+    font-size: 0.8rem;
+    color: var(--Grayish-Cyan);
+}
+
+.reset-button {
+    width: 100%;
+    margin-top: 1.5rem;
+    border-radius: 0.3rem;
+    height: 50px;
+    border: 0;
+    background-color: var(--Strong-Cyan);
+    color: var(--Very-Dark-Cyan);
+    text-transform: uppercase;
+    font-size: 1.2rem;
+    font-weight: 700;
+    font-family: 'Space Mono', monospace;
+}
+
+footer {
+    position: relative;
+    font-size: 0.5rem;
+    bottom: 1rem;
+}
+
+.attribution { text-align: center; }
+.attribution a { color: hsl(228, 45%, 44%); }
+
+@media screen and (min-width: 768px) {
+    body {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    main {
+        margin-top: 2rem;
+        display: flex;
+        max-width: 900px;
+        justify-content: center;
+        border-radius: 2rem 2rem 2rem 2rem;
+    }
+
+    .calculator-section {
+        max-width: 375px;
+        margin-right: 3rem;
+    }
+
+    .results-section {
+        width: 375px;
+    }
+
+    .tip-button, .tip-custom {
+        margin-top: 0.8rem;
+        height: 50px;
+        width: 120px;
+        border-radius: 0.3rem;
+    }
+
+    .reset-button {
+        width: 100%;
+        margin-top: 9rem;
+        border-radius: 0.3rem;
+        height: 50px;
+        border: 0;
+        background-color: var(--Strong-Cyan);
+        color: var(--Very-Dark-Cyan);
+        text-transform: uppercase;
+        font-size: 1.2rem;
+        font-weight: 700;
+        font-family: 'Space Mono', monospace;
+    }
+
+    footer {
+        position: fixed;
+        font-size: .6875rem;
+        bottom: 1rem;
+    }
+}
+
+/* Changer classes */
+.hidden {
+    display: none;
+}
+
+.error-input {
+    outline: 2px solid var(--Error-Red) !important;
+}
